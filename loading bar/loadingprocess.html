@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #dddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #f44271;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+body {
+  background-color: #f77676;
+}
+
+
+</style>
+<body>
+
+<h1 align="center">Loading Process...</h1>
+
+<button onclick="move()">Click!</button>
+<br>
+
+<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+<br>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      window.location="https://itk.ac.id/";
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
